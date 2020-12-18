@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldApp", "HelloWorldApp\HelloWorldApp.csproj", "{520BCC62-902C-4C7C-ABC5-7DF5552195C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperCalculator", "SuperCalculator\SuperCalculator.csproj", "{F676A839-1588-4B7B-8DC6-3A83F0333B3B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{520BCC62-902C-4C7C-ABC5-7DF5552195C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{520BCC62-902C-4C7C-ABC5-7DF5552195C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{520BCC62-902C-4C7C-ABC5-7DF5552195C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{520BCC62-902C-4C7C-ABC5-7DF5552195C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F676A839-1588-4B7B-8DC6-3A83F0333B3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F676A839-1588-4B7B-8DC6-3A83F0333B3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F676A839-1588-4B7B-8DC6-3A83F0333B3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F676A839-1588-4B7B-8DC6-3A83F0333B3B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6EEEDCA1-6073-4006-994E-70F53DCA242E}
+	EndGlobalSection
+EndGlobal

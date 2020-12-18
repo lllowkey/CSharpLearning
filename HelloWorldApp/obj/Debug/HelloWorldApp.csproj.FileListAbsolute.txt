@@ -1,0 +1,14 @@
+E:\CsharpWorkSpace\HelloWorldApp\HelloWorldApp\bin\Debug\HelloWorldApp.exe.config
+E:\CsharpWorkSpace\HelloWorldApp\HelloWorldApp\bin\Debug\HelloWorldApp.exe
+E:\CsharpWorkSpace\HelloWorldApp\HelloWorldApp\bin\Debug\HelloWorldApp.pdb
+E:\CsharpWorkSpace\HelloWorldApp\HelloWorldApp\obj\Debug\HelloWorldApp.csprojAssemblyReference.cache
+E:\CsharpWorkSpace\HelloWorldApp\HelloWorldApp\obj\Debug\HelloWorldApp.csproj.CoreCompileInputs.cache
+E:\CsharpWorkSpace\HelloWorldApp\HelloWorldApp\obj\Debug\HelloWorldApp.exe
+E:\CsharpWorkSpace\HelloWorldApp\HelloWorldApp\obj\Debug\HelloWorldApp.pdb
+E:\CsharpWorkSpace\HelloWorldApp\HelloWorldApp\bin\Debug\EntityFramework.dll
+E:\CsharpWorkSpace\HelloWorldApp\HelloWorldApp\bin\Debug\EntityFramework.SqlServer.dll
+E:\CsharpWorkSpace\HelloWorldApp\HelloWorldApp\bin\Debug\SuperCalculator.dll
+E:\CsharpWorkSpace\HelloWorldApp\HelloWorldApp\bin\Debug\SuperCalculator.pdb
+E:\CsharpWorkSpace\HelloWorldApp\HelloWorldApp\bin\Debug\EntityFramework.xml
+E:\CsharpWorkSpace\HelloWorldApp\HelloWorldApp\bin\Debug\EntityFramework.SqlServer.xml
+E:\CsharpWorkSpace\HelloWorldApp\HelloWorldApp\obj\Debug\HelloWorldApp.csproj.CopyComplete

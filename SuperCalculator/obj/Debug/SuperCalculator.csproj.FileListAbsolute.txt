@@ -1,0 +1,6 @@
+E:\CsharpWorkSpace\HelloWorldApp\SuperCalculator\bin\Debug\SuperCalculator.dll
+E:\CsharpWorkSpace\HelloWorldApp\SuperCalculator\bin\Debug\SuperCalculator.pdb
+E:\CsharpWorkSpace\HelloWorldApp\SuperCalculator\obj\Debug\SuperCalculator.csprojAssemblyReference.cache
+E:\CsharpWorkSpace\HelloWorldApp\SuperCalculator\obj\Debug\SuperCalculator.csproj.CoreCompileInputs.cache
+E:\CsharpWorkSpace\HelloWorldApp\SuperCalculator\obj\Debug\SuperCalculator.dll
+E:\CsharpWorkSpace\HelloWorldApp\SuperCalculator\obj\Debug\SuperCalculator.pdb
