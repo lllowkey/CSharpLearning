@@ -34,7 +34,7 @@ namespace HelloWorldApp
                 Console.WriteLine(p.Name);
             }*/
 
-            System.IO.File.Create("E:\\HellowWorld.txt");
+            //System.IO.File.Create("E:\\HellowWorld.txt");
 
             /*委托*/
             /*Calculator c = new Calculator();
@@ -84,12 +84,56 @@ namespace HelloWorldApp
             csStu.Report();*/
 
             /*checked&uncheck*/
-            uint x = uint.MaxValue;
+            /* uint x = uint.MaxValue;
+             Console.WriteLine(x);
+
+             var binStr = Convert.ToString(x, 2);
+
+             unchecked
+             {
+                 try
+                 {
+                     uint y = checked(x + 1);
+                     Console.WriteLine(y);
+                 }
+                 catch (OverflowException ex)
+                 {
+
+                     Console.WriteLine("overflow");
+                 }
+             }*/
+
+            /*->操作指针*/
+            /*unsafe
+            {
+                Student stu;
+            stu.ID = 1;
+            // 用 . 直接访问
+            stu.Score = 99;
+
+            Student* pStu = &stu;
+            // 用 -> 间接访问
+            pStu->Score = 100;
+
+            Console.WriteLine(stu.Score);
+
+            }*/
+
+            /*int x = 12345678;
             Console.WriteLine(x);
+            int y = ~x; 
+            Console.WriteLine(y);
+            int z = y + 1;
+            Console.WriteLine(z);
 
-            var binStr = Convert.ToString(x, 2);
-            Console.WriteLine(binStr);
+            var xStr = Convert.ToString(x, 2).PadLeft(32, '0');
+            var yStr = Convert.ToString(y, 2).PadLeft(32, '0');
+            Console.WriteLine(xStr);
+            Console.WriteLine(yStr);*/
 
+            String str1 = Console.ReadLine();
+            int x = Convert.ToInt32(str1);
+            Console.WriteLine(x);
 
 
         }
@@ -122,23 +166,13 @@ namespace HelloWorldApp
             return people;
         }
     }
-    class Student
+    struct Student
     {
+        public int ID;
         public string Name;
-        public int Score;
-        public void Report()
-        {
-            Console.WriteLine("Im a student");
-        }
+        public long Score;
     }
 
-    class CsStudent : Student
-    {
-        new public void Report()
-        {
-            Console.WriteLine("Im a CsStudent");
-        }
-    }
 
     class Calculator
     {
