@@ -8,6 +8,7 @@ using Tools;
 
 namespace HelloWorldApp
 {
+    public delegate double CalcDelegate(double x, double y);
     class Program
     {
         static void Main(string[] args)
@@ -131,11 +132,255 @@ namespace HelloWorldApp
             Console.WriteLine(xStr);
             Console.WriteLine(yStr);*/
 
-            String str1 = Console.ReadLine();
+            /*String str1 = Console.ReadLine();
             int x = Convert.ToInt32(str1);
+            Console.WriteLine(x);*/
+
+            /*装箱后父类无法使用子类的方法*/
+            /*Teacher t = new Teacher();
+            Human h = t;
+            Animal a = h;
+            a.Eat();*/
+
+            /*自定义操作符*/
+            /*Stone stone = new Stone();
+            stone.Age = 5000;
+            Monkey wukong = (Monkey)stone;
+            Console.WriteLine(wukong.Age);*/
+
+            /*可空类型*/
+            /*Nullable<int> x = null;
+            int? y = null;*/
+
+            /*var x = 5 > 3 ? 2 : 3.0;
             Console.WriteLine(x);
+            Console.WriteLine(x.GetType());
 
+            var v = typeof(Int32);
+            Console.WriteLine(v);
 
+            Form myForm = new Form();
+            myForm.Text = "HELLO";
+            myForm.Load += MyForm_Load;*/
+
+            /*拓展方法*/
+            /*double x = 3.01415926;
+            double y = x.Round(4);*/
+
+            /*LinQ*/
+            /*var myList = new List<int>() { 11, 12, 9, 14, 15 };
+            //bool result = AllGreaterThanTen(myList);
+            // 这里的 All 就是一个扩展方法
+            bool result = myList.All(i => i > 10);
+            Console.WriteLine(result);*/
+
+            /*委托的使用*/
+            /*CalculatorDemo calculator = new CalculatorDemo();
+            Action action = new Action(calculator.Report);
+            calculator.Report();
+            action.Invoke();
+            action();
+
+            Func<int, int, int> func1 = new Func<int, int, int>(calculator.Add);
+            Func<int, int, int> func2 = new Func<int, int, int>(calculator.Sub);
+
+            int x = 100;
+            int y = 200;
+            int z = 0;
+
+            z = func1(x, y);
+            Console.WriteLine(z);
+            z = func2(x, y);
+            Console.WriteLine(z);*/
+
+            /*自定义委托--委托也是一种类*/
+            Type t = typeof(Action);
+            Console.WriteLine(t.IsClass);
+
+            CalculatorDelegate calculator = new CalculatorDelegate();
+            CalcDelegate calc1 = new CalcDelegate(calculator.Add);
+            CalcDelegate calc2 = new CalcDelegate(calculator.Sub);
+            CalcDelegate calc3 = new CalcDelegate(calculator.Mul);
+            CalcDelegate calc4 = new CalcDelegate(calculator.Div);
+
+            double a = 100;
+            double b = 200;
+            double c = 0;
+
+            c = calc1.Invoke(a, b);
+            Console.WriteLine(c);
+            c = calc2.Invoke(a, b);
+            Console.WriteLine(c);
+            c = calc3.Invoke(a, b);
+            Console.WriteLine(c);
+            c = calc4.Invoke(a, b);
+            Console.WriteLine(c);
+        }
+        static bool AllGreaterThanTen(List<int> intList)
+        {
+            foreach (var item in intList)
+            {
+                if (item <= 10)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+        private static void MyForm_Load(object sender, EventArgs e)
+        {
+            Form form = sender as Form;
+            if (form == null)
+            {
+                return;
+            }
+            form.Text = "new Title";
+
+        }
+        /*索引器*/
+        private Dictionary<String, int> scoreDictionary = new Dictionary<string, int>();
+
+        public int? this[String subject]
+        {
+            get
+            {
+                if (scoreDictionary.ContainsKey(subject))
+                {
+                    return scoreDictionary[subject];
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                if (value.HasValue == false)
+                {
+                    throw new Exception("Score cannot be null");
+                }
+
+                if (scoreDictionary.ContainsKey(subject))
+                {
+                    //  可空类型的 Value 属性才是其真实值。
+                    scoreDictionary[subject] = value.Value;
+                }
+                else
+                {
+                    scoreDictionary.Add(subject, value.Value);
+                }
+            }
+        }
+
+    }
+
+    class CalculatorDelegate
+    {
+        public double Add(double x, double y)
+        {
+            return x + y;
+        }
+
+        public double Sub(double x, double y)
+        {
+            return x - y;
+        }
+
+        public double Mul(double x, double y)
+        {
+            return x * y;
+        }
+
+        public double Div(double x, double y)
+        {
+            return x / y;
+        }
+
+    }
+
+    class CalculatorDemo
+    {
+        public void Report()
+        {
+            Console.WriteLine("i have 3 methods");
+        }
+
+        public int Add(int a, int b)
+        {
+            return a + b;
+        }
+
+        public int Sub(int a, int b)
+        {
+            return a - b;
+        }
+    }
+    static class DoubleExtension
+    {
+        public static double Round(this double input, int digits)
+        {
+            double result = Math.Round(input, digits);
+            return result;
+        }
+    }
+
+    struct color
+    {
+        public int Red;
+        public int Green;
+        public int Blue;
+
+    }
+
+    class Brush
+    {
+        public static readonly color DefaultColor;
+        static Brush()/*静态构造器*/
+        {
+            Brush.DefaultColor = new color { Red = 0, Green = 0, Blue = 0 };
+        }
+    }
+    class Stone
+    {
+        public int Age;
+
+        public static explicit operator Monkey(Stone stone)
+        {
+            Monkey m = new Monkey();
+            m.Age = stone.Age / 500;
+            return m;
+        }
+    }
+
+    class Monkey
+    {
+        private int age;
+
+        public int Age { get => age; set => age = value; }
+    }
+
+    class Animal
+    {
+        public void Eat()
+        {
+            Console.WriteLine("Eating...");
+        }
+    }
+
+    class Human : Animal
+    {
+        public void Think()
+        {
+            Console.WriteLine("Who i am?");
+        }
+    }
+
+    class Teacher : Human
+    {
+        public void Teach()
+        {
+            Console.WriteLine("I teach programmming");
         }
     }
 
