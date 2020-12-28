@@ -196,8 +196,9 @@ namespace HelloWorldApp
             /*自定义委托--委托也是一种类*/
             Type t = typeof(Action);
             Console.WriteLine(t.IsClass);
-
-            CalculatorDelegate calculator = new CalculatorDelegate();
+            
+            DelegateCalculator calculator = new DelegateCalculator();
+            /*public delegate double CalcDelegate(double x, double y);*/
             CalcDelegate calc1 = new CalcDelegate(calculator.Add);
             CalcDelegate calc2 = new CalcDelegate(calculator.Sub);
             CalcDelegate calc3 = new CalcDelegate(calculator.Mul);
@@ -275,7 +276,7 @@ namespace HelloWorldApp
 
     }
 
-    class CalculatorDelegate
+    class DelegateCalculator
     {
         public double Add(double x, double y)
         {
